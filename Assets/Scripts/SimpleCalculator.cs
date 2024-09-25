@@ -37,12 +37,17 @@ public class SimpleCalculator : MonoBehaviour
         float result = nums[0] * nums[1];
         _resultOutput.text = $"{result}";
     }
-    
+
     public void DivideNumbers()
     {
         List<float> nums = ReturnNumbers(_firstValueInput, _secondValueInput);
-        float result = nums[0] / nums[1];
-        _resultOutput.text = $"{result}";
+
+        if (nums[1] != 0)
+        {
+            float result = nums[0] / nums[1];
+            _resultOutput.text = $"{result}";
+        }
+        else _resultOutput.text = "На ноль делить нельзя!";
     }
 
 
